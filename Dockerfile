@@ -11,7 +11,7 @@ COPY api/ ./api/
 RUN cd api && npm install && ENVIRONMENT=production npm run build
 RUN ls
 
-# Stage3: Packagign the app
+# Stage3: Packaging the app
 FROM node:14-slim
 WORKDIR /root/
 COPY --from=ui-build /usr/src/ui/build ./ui/build
